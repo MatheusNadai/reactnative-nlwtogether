@@ -37,7 +37,7 @@ export function SignIn() {
       <Text style = {styles.title}>
       Conecte-se{`\n`}
       e organize{`\n`}
-     suas jogatinas
+     suas jogatinass
 
       </Text>
 
