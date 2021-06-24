@@ -6,7 +6,7 @@ import {
   View,
   TextInput,
   Image,
-  StatusBar,
+
  } from 'react-native';
 
 import { ButtonIcon } from '../../components/ButtonIcon';
@@ -20,12 +20,7 @@ export function SignIn() {
   return (
     <View style={styles.container}>
 
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor = "transparent"
-        translucent
       
-      />
       
       <Image source ={IlustrationImg} 
       style = {styles.image}
@@ -36,8 +31,8 @@ export function SignIn() {
     <View style = {styles.content}>
       <Text style = {styles.title}>
       Conecte-se{`\n`}
-      e organize{`\n`}
-     suas jogatinass
+      e organize suas{`\n`}
+      jogatinas
 
       </Text>
 
