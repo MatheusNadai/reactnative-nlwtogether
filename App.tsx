@@ -8,7 +8,7 @@ import AppLoading from 'expo-app-loading';
 
 
 
-import { Home } from './src/screens/Home';
+import { Routes } from './src/routes';
 import {Background} from './src/components/Background'
 import { StatusBar } from 'react-native';
 
@@ -30,14 +30,14 @@ export default function App() {
 
 
     return(
-     <Background>
+      <Background>
      <StatusBar
         barStyle="light-content"
         backgroundColor = "transparent"
         translucent
       
       />
-      <Home />
-    </Background>
+      <Routes />
+      </Background>
   );
   }
