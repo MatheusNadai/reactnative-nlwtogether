@@ -8,6 +8,8 @@ import { ListHeader} from "../../components/ListHeader";
 import { ListDivider } from "../../components/ListDivider";
 import { styles } from "./style";
 import { Appointment } from "../../components/Appointment";
+import { useNavigation } from "@react-navigation/native";
+
 
 export function Home(){
 
@@ -18,6 +20,8 @@ export function Home(){
     }
 
     const [category, setCategory] = useState('')
+    const navigation = useNavigation();
+
     const appointments = [
      {
         id: '1',
@@ -49,6 +53,11 @@ export function Home(){
   },   
     ]
 
+    function handleAppointmentDetails(){
+      navigation.navigate('AppointmentDetails')
+
+    }
+
     return(
         <>
         <View style={styles.header}>
@@ -70,7 +79,11 @@ export function Home(){
           data = {appointments}
           keyExtractor = {item => item.id}
           renderItem = {({item}) => (
-          <Appointment data = {item}/>
+          <Appointment 
+              data = {item}
+              onPress = {handleAppointmentDetails}
+          />     
+
           )} 
           ItemSeparatorComponent = {() => <ListDivider/>}         
           style = {styles.matches}
