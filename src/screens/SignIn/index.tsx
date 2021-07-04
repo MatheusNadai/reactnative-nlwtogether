@@ -1,33 +1,41 @@
 
 import React from 'react';
-import { useState } from 'react';
+
 import {
   Text,
   View,
   TextInput,
   Image,
+  Alert,
+  ActivityIndicator,
 
  } from 'react-native';
 
 import { ButtonIcon } from '../../components/ButtonIcon';
 import IlustrationImg from '../../assets/illustration.png'
 import{ styles } from './styles'
-import { useNavigation } from '@react-navigation/native';
-
+import {useAuth} from '../../hooks/auth'
 
 import {Background} from '../../components/Background';
+import { then } from '../../../metro.config';
+import { theme } from '../../global/styles/theme';
+
 
 
 
 
 
 export function SignIn() {
-  const navigation = useNavigation();
+  const {loading, signIn} = useAuth();
 
+ async function handleSignIn() {
+    try{
+      await signIn();
 
-  function handleSignIn() {
-    navigation.navigate('Home');
-
+    }catch(error) {
+      Alert.alert(error)
+    }
+  
   }
 
 
@@ -59,12 +67,14 @@ export function SignIn() {
 
         </Text>
 
-
+      {
+        loading ? <ActivityIndicator color = {theme.colors.primary}/>
+        :
         <ButtonIcon
         title="Entrar com Discord"
         onPress = {handleSignIn}
         />
-        
+      } 
 
     </View>
 

@@ -73,7 +73,6 @@ export function Home(){
         categorySelected={category}
         setCategory={handleCategorySelect}
       />
-      <View style={styles.content}>
           <ListHeader
             title = "Partidas agendadas"
             subtitle = "Total 6"
@@ -89,7 +88,8 @@ export function Home(){
           />     
 
           )} 
-          ItemSeparatorComponent = {() => <ListDivider/>}         
+          ItemSeparatorComponent = {() => <ListDivider/>} 
+          contentContainerStyle={{paddingBottom : 69}}        
           style = {styles.matches}
           showsVerticalScrollIndicator={false}
           
@@ -97,8 +97,8 @@ export function Home(){
           />
 
 
-      </View>
-      </>
+          </>
+      
       
     )
 }
