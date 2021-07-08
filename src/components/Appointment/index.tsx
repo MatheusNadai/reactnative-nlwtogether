@@ -39,7 +39,7 @@ export function Appointment({ data, ...rest }: Props) {
         >
           <GuildIcon guildId={data.guild.id} iconId={data.guild.icon} />
         </LinearGradient>
-      
+
         <View style={styles.content}>
           <View style={styles.header}>
             <Text style={styles.title}>
@@ -47,7 +47,7 @@ export function Appointment({ data, ...rest }: Props) {
             </Text>
 
             <Text style={styles.category}>
-              { category.title }
+              
             </Text>
           </View>
 

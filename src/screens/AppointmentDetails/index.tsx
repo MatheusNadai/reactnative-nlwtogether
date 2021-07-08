@@ -33,6 +33,7 @@ type Params = {
   guildSelected: AppointmentProps
 }
 
+
 type GuildWidget = {
   id: string;
   name: string;
@@ -64,7 +65,7 @@ export function AppointmentDetails(){
     : widget.instant_invite;
 
     Share.share({
-      message,
+      message: 'Deu certo',
       url: widget.instant_invite
     });    
   }
